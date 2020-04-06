@@ -30,17 +30,21 @@ nav div a {
     /** div content **/
     display: flex;
     flex-grow: 1;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+
 }
 /** Auth CSS **/
-.container{
+.log{
     display: flex;
-    box-shadow: 1px 1px 6px #555;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 .card{
     /** Log In **/
     background-color: #c0ff79;
+    box-shadow: 1px 1px 6px #555;
+    justify-content: center;
     padding: 50px;
 }
 .form-group{
