@@ -20,13 +20,34 @@ nav div {
     margin-left: 10px;
     margin-right: 10px;
 }
+nav div a {
+    text-decoration: none;
+}
 .push{
     margin-right: auto;
 }
 #main{
     /** div content **/
+    display: flex;
     flex-grow: 1;
+    justify-content: center;
+    align-items: center;
 }
+/** Auth CSS **/
+.container{
+    display: flex;
+    box-shadow: 1px 1px 6px #555;
+}
+.card{
+    /** Log In **/
+    background-color: #c0ff79;
+    padding: 50px;
+}
+.form-group{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/** -------- **/
 footer{
     background-color: lightcoral;
     display: flex;
@@ -36,4 +57,9 @@ footer{
 }
 footer ul{
     list-style-type: none;
+    text-decoration: none;
+
+}
+footer ul li a{
+    text-decoration: none;
 }
