@@ -7,4 +7,14 @@
     @foreach($user->chansons as $c)
         {{ $c->nom }}<br>
     @endforeach
+
+    @foreach($user->ilsMeSuivent as $followed)
+        Followers : {{ $followed->name }}<br>
+    @endforeach
+
+
+    @foreach($user->jeLesSuit as $follow)
+        Following : {{ $follow->name }}<br>
+    @endforeach
+
 @endsection
