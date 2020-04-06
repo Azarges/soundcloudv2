@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+    min-height: 100vh;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+nav{
+    background-color: lightgreen;
+    display: flex;
+    padding: 20px;
+
+}
+nav div {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.push{
+    margin-right: auto;
+}
+#main{
+    /** div content **/
+    flex-grow: 1;
+}
+footer{
+    background-color: lightcoral;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: center;
+}
+footer ul{
+    list-style-type: none;
+}
