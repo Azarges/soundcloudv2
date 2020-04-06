@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Musiques;
+use App\Chanson;
 use Illuminate\Http\Request;
 
 class MonControlleur extends Controller
@@ -12,12 +12,12 @@ class MonControlleur extends Controller
     }
 
     public function musiques(){
-        $musiques = (Musiques::all());
+        $musiques = (Chanson::all());
         return view("musiques", ["musiques" => $musiques]);
     }
 
     public function musique($id){
-        $musiques = (Musiques::find($id));
-        return view("musique", ["musiques" => $musiques]);
+        $musique = (Chanson::find($id));
+        return view("musique", ["musique" => $musique]);
     }
 }
