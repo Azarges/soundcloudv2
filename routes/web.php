@@ -11,9 +11,13 @@
 |
 */
 
+use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Auth;
+
 Route::get('/', 'MonControlleur@index');
 Route::get('/musiques', 'MonControlleur@musiques');
 Route::get('/musique/{id}', 'MonControlleur@musique')->where('id', '[0-9]+');
+Route::get('/user/{id}', 'MonControlleur@user');
 
 Auth::routes();
 

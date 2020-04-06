@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Chanson;
-use Illuminate\Http\Request;
+use App\User;
 
 class MonControlleur extends Controller
 {
@@ -19,5 +19,9 @@ class MonControlleur extends Controller
     public function musique($id){
         $musique = (Chanson::find($id));
         return view("musique", ["musique" => $musique]);
+    }
+    public function user($id){
+        $user = (User::find($id));
+        return view("user", ["user" => $user]);
     }
 }
