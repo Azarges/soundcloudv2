@@ -29,11 +29,15 @@
             </form>
         @endguest
 </nav>
+@auth
+    <a href="/nouvelle">Ajouter chanson</a>
+@endauth
 <div id="main">
     @yield('content')
 </div>
 <!-- Scripts -->
 <script src="{{ asset('js/jquery.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 <footer>
     <ul>
         <li><a href="*">azertyuiop</a></li>

@@ -16,6 +16,9 @@ Route::get('/musiques', 'MonControlleur@musiques');
 Route::get('/musique/{id}', 'MonControlleur@musique')->where('id', '[0-9]+');
 Route::get('/user/{id}', 'MonControlleur@user');
 
+Route::get('/nouvelle', 'MonControlleur@nouvelle')->middleware('auth');
+Route::post('/creer', 'MonControlleur@creer')->middleware('auth');
+
 Auth::routes();
 
 

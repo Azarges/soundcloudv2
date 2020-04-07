@@ -7,14 +7,65 @@
     @foreach($user->chansons as $c)
         {{ $c->nom }}<br>
     @endforeach
+    <?php
+    $nbFollowers = count($user->ilsMeSuivent);
+    $nbAbonnement = count($user->jeLesSuit);
+    ?>
+    {{ $nbFollowers }} Abonnés <br>
 
     @foreach($user->ilsMeSuivent as $followed)
-        Followers : {{ $followed->name }}<br>
+        <p class="p">Followers : {{ $followed->name }}</p><br>
     @endforeach
 
-
+    {{ $nbAbonnement }} Abonnements<br>
     @foreach($user->jeLesSuit as $follow)
         Following : {{ $follow->name }}<br>
     @endforeach
+    <div id="menu">
+        <div class="menu" id="menu1" onclick="afficheMenu(this)">
+            <a href="#">Menu 1</a>
+        </div>
+        <div id="sousmenu1" style="display:none">
+            <div class="sousmenu">
+                <a href="#">Sous-Menu 1.1</a>
+            </div>
+            <div class="sousmenu">
+                <a href="#">Sous-Menu 1.2</a>
+            </div>
+            <div class="sousmenu">
+                <a href="#">Sous-Menu 1.3</a>
+            </div>
+            <div class="sousmenu">
+                <a href="#">Sous-Menu 1.4</a>
+            </div>
+        </div>
+    </div>
+    <script>function afficheMenu(obj){
 
+            var idMenu     = obj.id;
+            var idSousMenu = 'sous' + idMenu;
+            var sousMenu   = document.getElementById(idSousMenu);
+
+            /*****************************************************/
+            /**	on cache tous les sous-menus pour n'afficher    **/
+            /** que celui dont le menu correspondant est cliqué **/
+            /** où 4 correspond au nombre de sous-menus         **/
+            /*****************************************************/
+            for(var i = 1; i <= 4; i++){
+                if(document.getElementById('sousmenu' + i) && document.getElementById('sousmenu' + i) != sousMenu){
+                    document.getElementById('sousmenu' + i).style.display = "none";
+                }
+            }
+
+            if(sousMenu){
+                //alert(sousMenu.style.display);
+                if(sousMenu.style.display == "block"){
+                    sousMenu.style.display = "none";
+                }
+                else{
+                    sousMenu.style.display = "block";
+                }
+            }
+
+        }</script>
 @endsection
