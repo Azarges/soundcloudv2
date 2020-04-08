@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+    @foreach($user->playlists as $p)
+        <div><a href="/playlist/{{ $p->id }}">{{ $p->nom }}</a> </div><br>
+    @endforeach
     User n°{{ $user->id }}<br>
     User n°{{ $user->name }}<br>
     User n°{{ $user->email }}<br>
@@ -14,7 +17,7 @@
     {{ $nbFollowers }} Abonnés <br>
 
     @foreach($user->ilsMeSuivent as $followed)
-        <p class="p">Followers : {{ $followed->name }}</p><br>
+        Followers : {{ $followed->name }}<br>
     @endforeach
 
     {{ $nbAbonnement }} Abonnements<br>

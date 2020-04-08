@@ -31,9 +31,9 @@ class User extends Authenticatable
 
 
     public function chansons() {
-        return $this->hasMany('App\Chanson', 'utilisateur_id');
-        // SELECT * from chason where utilisateur_id = $this->id
-    }
+    return $this->hasMany('App\Chanson', 'utilisateur_id');
+    // SELECT * from chason where utilisateur_id = $this->id
+}
 
 
     public function ilsMeSuivent() {
@@ -43,5 +43,12 @@ class User extends Authenticatable
 
     public function jeLesSuit() {
         return $this->belongsToMany("App\User", "suit", "suiveur_id", "suivi_id");
+    }
+
+    public function playlists()
+    {
+        return $this->hasMany('App\Playlist', 'utilisateur_id');
+        // SELECT * from Playlist where utilisateur_id = $this->id
+
     }
 }

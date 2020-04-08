@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Chanson;
+use App\Playlist;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -53,6 +54,10 @@ class MonControlleur extends Controller
         //}
 
         return redirect("/");
+    }
+
+    public function playlist(){
+        return view("playlist");
     }
 
 }
