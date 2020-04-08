@@ -3,7 +3,11 @@
 @section('content')
     @foreach($user->playlists as $p)
         <div><a href="/playlist/{{ $p->id }}">{{ $p->nom }}</a> </div><br>
-    @endforeach
+        @foreach($p->chansons as $c)
+            {{ $c->nom }}<br>
+        @endforeach
+
+    @endforeach<br>
     User n°{{ $user->id }}<br>
     User n°{{ $user->name }}<br>
     User n°{{ $user->email }}<br>
