@@ -25,6 +25,9 @@ class MonControlleur extends Controller
     }
     public function user($id){
         $user = (User::find($id));
+        if($user==false){
+            abort("404");
+        }
         return view("user", ["user" => $user]);
     }
 
