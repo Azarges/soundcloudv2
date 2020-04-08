@@ -15,7 +15,7 @@
 <nav>
         <div class="push"><a href="{{ url('/') }}">{{ config('app.name', 'Laravel') }}</a></div>
         @auth
-            <a href="/nouvelle">Ajouter chanson</a>
+            <div><a href="/nouvelle">Ajouter chanson</a></div>
         @endauth
         @guest
             <div><a href="{{ route('login') }}">Login</a></div>

@@ -25,6 +25,20 @@ nav a {
     text-decoration: none;
     font-family: sans-serif;
     color: #fff;
+    position: relative;
+}
+nav div a::after{
+    content: "";
+    display: flex;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: .2s ease-out;
+    margin-top: 7px;
+    position: absolute;
+}
+nav div a:hover::after{
+    width: 100%;
 }
 .push{
     margin-right: auto;
