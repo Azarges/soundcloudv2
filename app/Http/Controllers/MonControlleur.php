@@ -83,5 +83,16 @@ class MonControlleur extends Controller
         return back();
     }
 
+    public function ajouterChansonP($id) {
+        return view("ajouterChansonP", ['id' => $id]);
+    }
+
+    public function ajouterChanson(Request $request) {
+        $c = new Contient();
+        $c->chanson_id = $request->input("id_chanson");
+        $c->playlist_id = Auth::id();
+        $c->save();
+        return redirect("/user/".Auth::id());
+    }
 
 }

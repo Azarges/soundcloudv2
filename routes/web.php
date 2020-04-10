@@ -22,8 +22,12 @@ Route::post('/creer', 'MonControlleur@creer')->middleware('auth');
 Route::get('/nouvellePlaylist', 'MonControlleur@nouvellePlaylist')->middleware('auth');
 Route::post('/creerPlaylist', 'MonControlleur@creerPlaylist')->middleware('auth');
 
-Route::get('/playlist/{id}', 'MonControlleur@playlist')->where('id', '[0-9]+');
+Route::get('/playlist/{id}', 'MonControlleur@playlist')->where('id', '[0-9]+')->name('playlist');
 Route::get('/suivi/{id}','MonControlleur@suivi')->middleware('auth')->where('id','[0-9]+');
+
+Route::get('/ajouterChansonP/{id}', 'MonControlleur@ajouterChansonP')->middleware('auth')->where('id', '[0-9]+');
+Route::get('/ajouterChanson/', 'MonControlleur@ajouterChansonP')->middleware('auth');
+
 
 Auth::routes();
 
