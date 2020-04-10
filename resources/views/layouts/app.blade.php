@@ -38,6 +38,7 @@
 <!-- Scripts -->
 <script src="{{ asset('js/jquery.js') }}"></script>
 <script src="{{ asset('js/app.js') }}"></script>
+@if( Route::currentRouteName() != 'login' &&  Route::currentRouteName() != 'register' && Route::currentRouteName() != 'reset')
 <footer>
     <ul>
         <li><a href="*">azertyuiop</a></li>
@@ -45,6 +46,7 @@
         <li><a href="*">azertyuiop</a></li>
     </ul>
 </footer>
+@endif
 </body>
 
 </html>
