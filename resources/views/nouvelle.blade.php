@@ -7,7 +7,7 @@
         <br>
         Style <input type="text" name="style" required placeholder="Style de la chanson">
         <br>
-        <input type="text" name="chanson"  >
+        Url <input type="text" name="chanson"  required placeholder="Url de la chanson" >
 
         <br>
         {{ csrf_field() }}

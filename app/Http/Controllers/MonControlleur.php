@@ -12,7 +12,8 @@ class MonControlleur extends Controller
 {
     public function index() {
         //phpinfo();
-        return view("index");
+        $musiques = (Chanson::all());
+        return view("index", ["musiques" => $musiques]);
     }
 
     public function musiques(){
@@ -56,8 +57,31 @@ class MonControlleur extends Controller
         return redirect("/");
     }
 
-    public function playlist(){
-        return view("playlist");
+    public function playlist($id){
+        $playlist = (Playlist::find($id));
+        return view("playlist", ["playlist" => $playlist]);
     }
+
+    public function nouvellePlaylist() {
+        return view("nouvellePlaylist");
+    }
+
+    public function creerPlaylist(Request $request) {
+        $c = new Playlist();
+        $c->nom = $request->input("nomPlaylist");
+        $c->utilisateur_id = Auth::id();
+        $c->save();
+        return redirect("/user/".Auth::id());
+    }
+
+    public function suivi($id){
+        $user = User::find($id);
+
+        if($user==false)
+            abort("403");
+        Auth::user()->jeLesSuit()->toggle($id);
+        return back();
+    }
+
 
 }

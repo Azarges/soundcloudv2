@@ -2,5 +2,8 @@
 
 @section('content')
     A vous de travailler maintenant :)
-    <a href="musiques">HEHE</a>
+    tests d'affichage des musiques
+    @foreach($musiques as $m)
+        <li><a href="/musique/{{ $m->id }}">{{ $m->nom }}</a> </li>
+    @endforeach
 @endsection
