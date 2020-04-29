@@ -70,10 +70,10 @@ class MonControlleur extends Controller
 
 
     public function creerPlaylist(Request $request) {
-        $c = new Playlist();
-        $c->nom = $request->input("nomPlaylist");
-        $c->utilisateur_id = Auth::id();
-        $c->save();
+        $p = new Playlist();
+        $p->nom = $request->input("nomPlaylist");
+        $p->utilisateur_id = Auth::id();
+        $p->save();
         return redirect("/user/".Auth::id());
     }
 

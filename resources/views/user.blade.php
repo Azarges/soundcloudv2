@@ -40,5 +40,8 @@
         @endforeach
 
     @endforeach<br>
+    @if( Auth::id() === $user->id)
     <a href="/nouvellePlaylist" >Ajouter une playlist</a>
+    @endif
+
 @endsection
