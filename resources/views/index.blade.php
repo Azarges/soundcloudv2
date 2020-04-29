@@ -1,10 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-    A vous de travailler maintenant :)
-    tests d'affichage des musiques
+    <h2>Écoutez gratuitement les dernières tendances de la communauté SoundCloud</h2>
+    <div class="main-musiques-box">
     @foreach($musiques as $m)
-        <li><a href="/musique/{{ $m->id }}">{{ $m->nom }}</a> </li>
-        <img src="{{ $m->img }}">
+        <div class="main-musiques-box-box">
+            <img class="imageMusiques" src="{{ $m->image }}"/>
+            <a href="/musique/{{ $m->id }}">{{ $m->nom }}</a>
+        </div>
     @endforeach
+    </div>
+    <h2>Merci de nous avoir écouté ! Inscrivez-vous dès maintenant.<br>
+        Sauvegardez des titres, suivez des artistes et créez des playlists, tout cela gratuitement.</h2>
+    <div class="content-input-button"><a class="input-button" href="{{ route('register') }}">Créer votre compte</a></div>
+    <div class="content-input-button">Vous avez déjà un compte ?   <a href="{{ route('login') }}">Se connecter</a></div>
 @endsection
