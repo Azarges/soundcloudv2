@@ -7,6 +7,7 @@
     <img class="imageMusique" src="{{ $musique->image }}"/>
     Style :  {{ $musique->style }}<br>
     Appartient à : <a href="/user/{{ $musique->utilisateur->id }}">{{ $musique->utilisateur->name }}</a>
+    <img src="{{ $musique->image }}"/>
 
     <script type="text/javascript">
         var monElementAudio = document.getElementById('musique');

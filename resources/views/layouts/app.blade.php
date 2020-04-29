@@ -15,8 +15,15 @@
 <nav>
         <div class="push"><a href="{{ url('/') }}">{{ config('app.name', 'Laravel') }}</a></div>
         @auth
+
             <div><a href="/nouvelle">Ajouter chanson</a></div>
         @endauth
+        <div>
+            <form id="search" class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2 btn-sm" type="search" name="search" required placeholder="Recherche" aria-label="Search">
+                <button class="btn my-2 my-sm-0 btn-sm" style="color: white; background-color: #018d8a" type="submit">Valider</button>
+            </form>
+        </div>
         @guest
             <div><a href="{{ route('login') }}">Login</a></div>
             <div><a href="{{ route('register') }}">Register</a></div>
@@ -31,6 +38,9 @@
                 {{ csrf_field() }}
             </form>
         @endguest
+
+
+
 </nav>
 <div id="main">
     @yield('content')

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Chanson;
+use App\Contient;
 use App\Playlist;
 use App\User;
 use Illuminate\Http\Request;
@@ -66,6 +67,8 @@ class MonControlleur extends Controller
         return view("nouvellePlaylist");
     }
 
+
+
     public function creerPlaylist(Request $request) {
         $c = new Playlist();
         $c->nom = $request->input("nomPlaylist");
@@ -87,12 +90,18 @@ class MonControlleur extends Controller
         return view("ajouterChansonP", ['id' => $id]);
     }
 
+
     public function ajouterChanson(Request $request) {
         $c = new Contient();
         $c->chanson_id = $request->input("id_chanson");
-        $c->playlist_id = Auth::id();
+        $c->playlist_id = $request->input("id_playlist");
         $c->save();
         return redirect("/user/".Auth::id());
     }
 
+    public function recherche($s){
+        $users=User::whereRaw("name LIKE CONCAT('%',?,'%')",[$s])->get();
+        $chansons=Chanson::whereRaw("nom LIKE CONCAT('%',?,'%')",[$s])->get();
+        return view("recherche",['users' => $users, 'chansons' => $chansons]);
+    }
 }

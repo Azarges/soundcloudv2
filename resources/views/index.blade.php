@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+
     <h2>Écoutez gratuitement les dernières tendances de la communauté SoundCloud</h2>
     <div class="main-musiques-box">
     @foreach($musiques as $m)
         <div class="main-musiques-box-box">
-            <img class="imageMusiques" src="{{ $m->image }}"/>
+            <a href="/musique/{{ $m->id }}"><img class="imageMusiques" src="{{ $m->image }}"/></a>
             <a href="/musique/{{ $m->id }}">{{ $m->nom }}</a>
         </div>
     @endforeach

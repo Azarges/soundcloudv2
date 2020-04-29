@@ -26,8 +26,9 @@ Route::get('/playlist/{id}', 'MonControlleur@playlist')->where('id', '[0-9]+')->
 Route::get('/suivi/{id}','MonControlleur@suivi')->middleware('auth')->where('id','[0-9]+');
 
 Route::get('/ajouterChansonP/{id}', 'MonControlleur@ajouterChansonP')->middleware('auth')->where('id', '[0-9]+');
-Route::get('/ajouterChanson/', 'MonControlleur@ajouterChansonP')->middleware('auth');
+Route::post('/ajouterChanson/', 'MonControlleur@ajouterChanson')->middleware('auth');
 
+Route::get('/recherche/{s}','MonControlleur@recherche');
 
 Auth::routes();
 

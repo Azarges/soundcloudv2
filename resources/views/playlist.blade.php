@@ -8,7 +8,7 @@
 
     @if(count($playlist->chansons )== 0)
         Votre playlist est vide !
-        @else
+    @else
     @foreach($playlist->chansons as $c)
         <a href="/musique/{{ $c->id }}">{{ $c->nom }}</a><br>
     @endforeach
