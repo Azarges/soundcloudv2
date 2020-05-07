@@ -103,6 +103,6 @@ class MonControlleur extends Controller
         $users=User::whereRaw("name LIKE CONCAT('%',?,'%')",[$s])->get();
         $chansons=Chanson::whereRaw("nom LIKE CONCAT('%',?,'%')",[$s])->get();
         $playlists=Playlist::whereRaw("nom LIKE CONCAT('%',?,'%')",[$s])->get();
-        return view("recherche",['users' => $users, 'chansons' => $chansons, 'playlists' => $playlists]);
+        return view("recherche",['result' => $s, 'users' => $users, 'chansons' => $chansons, 'playlists' => $playlists]);
     }
 }
