@@ -12,4 +12,9 @@
     @foreach($chansons as $c)
         <a href="/musique/{{ $c->id }}">{{ $c->nom }}</a><br>
     @endforeach
+    Les playlists
+    <br>
+    @foreach($playlists as $p)
+        <a href="/playlist/{{ $p->id }}">{{ $p->nom }}</a><br>
+    @endforeach
 @endsection
