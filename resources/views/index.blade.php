@@ -10,8 +10,14 @@
         </div>
     @endforeach
     </div>
+    @auth()
+        <h2>Merci de nous avoir écouté !<br>Sauvegardez des titres, suivez des artistes et créez des playlists, tout cela gratuitement.</h2>
+    @endauth
+
+    @guest()
     <h2>Merci de nous avoir écouté ! Inscrivez-vous dès maintenant.<br>
         Sauvegardez des titres, suivez des artistes et créez des playlists, tout cela gratuitement.</h2>
     <div class="content-input-button"><a class="input-button" href="{{ route('register') }}">Créer votre compte</a></div>
     <div class="content-input-button">Vous avez déjà un compte ? <a href="{{ route('login') }}">Se connecter</a></div>
+    @endguest()
 @endsection
