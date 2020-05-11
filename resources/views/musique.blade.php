@@ -8,6 +8,8 @@
     Style :  {{ $musique->style }}<br>
     Appartient à : <a href="/user/{{ $musique->utilisateur->id }}">{{ $musique->utilisateur->name }}</a>
 
+    <button ></button>
+
     <script type="text/javascript">
         var monElementAudio = document.getElementById('musique');
         monElementAudio.volume = 0.02;

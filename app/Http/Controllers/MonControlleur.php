@@ -26,6 +26,16 @@ class MonControlleur extends Controller
         $musique = (Chanson::find($id));
         return view("musique", ["musique" => $musique]);
     }
+
+    public function deleteMusique($id){
+        Chanson::where('id',$id)->delete();
+        $this->index();
+    }
+
+    public function test(){
+        print_r("aze");
+}
+
     public function user($id){
         $user = (User::find($id));
         if($user==false){
@@ -41,15 +51,15 @@ class MonControlleur extends Controller
 
     public function creer(Request $request) {
         //print_r($_FILES);
-        print_r("oui");
         //if($request->HasFile("chanson") && $request->file("chanson")->isValid()){
-            print_r("non");
             $c = new Chanson();
             $c->nom = $request->input("nom");
             $c->style = $request->input("style");
             $c->utilisateur_id = Auth::id();
             $c->fichier = $request->input("chanson");
-            //$c->fichier = $request->file("chanson")->store("public/chansons".Auth::id());
+            $c->image = $request->input("image");
+
+        //$c->fichier = $request->file("chanson")->store("public/chansons".Auth::id());
             //$c->fichier = str_replace("public/", "/storage/", $c->fichier);
 
             $c->save();

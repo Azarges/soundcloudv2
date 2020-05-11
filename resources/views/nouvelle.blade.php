@@ -8,6 +8,8 @@
         Style <input type="text" name="style" required placeholder="Style de la chanson">
         <br>
         Url <input type="text" name="chanson"  required placeholder="Url de la chanson" >
+        <br>
+        Url de l'image<input type="text" name="image"  required placeholder="Url de l'image" >
 
         <br>
         {{ csrf_field() }}
