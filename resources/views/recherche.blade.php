@@ -3,20 +3,20 @@
 @section('content')
     <h2>Résultat de recherche pour "{{$result}}"</h2>
 
-    <div class="test">
+    <div class="wrapper">
         <h3 class="ml5">Les utilisateurs</h3><br>
         @if(count($users)== 0)
-            Aucun résultat d'utilisateur pour {{$result}}
+            <span class="ml5">Aucun résultat d'utilisateur pour {{$result}}</span>
         @else
             @foreach($users as $u)
                 <a class="ml5" href="/user/{{ $u->id }}">{{ $u->name }} </a><br>
             @endforeach
         @endif
-        <br>
+        <br><br>
         <h3 class="ml5">Les musiques</h3><br>
 
         @if(count($chansons)== 0)
-            Aucun résultat d'utilisateur pour {{$result}}
+            <span class="ml5">Aucun résultat de musique pour {{$result}}</span>
         @else
             <div class="main-musiques-boite">
                 @foreach($chansons as $c)
@@ -28,10 +28,10 @@
                 @endforeach
             </div>
         @endif
-        <br>
+        <br><br>
         <h3 class="ml5">Les playlists</h3><br>
         @if(count($playlists)== 0)
-            Aucun résultat d'utilisateur pour {{$result}}
+            <span class="ml5">Aucun résultat de playlist pour {{$result}}</span>
         @else
             @foreach($playlists as $p)
                 <a class="ml5" href="/playlist/{{ $p->id }}">{{ $p->nom }}</a><br>

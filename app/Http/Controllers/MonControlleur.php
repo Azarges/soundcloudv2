@@ -29,12 +29,10 @@ class MonControlleur extends Controller
 
     public function deleteMusique($id){
         Chanson::where('id',$id)->delete();
-        $this->index();
+        Contient::where('chanson_id',$id)->delete();
+        $musiques = (Chanson::all());
+        return view("index", ["musiques" => $musiques]);
     }
-
-    public function test(){
-        print_r("aze");
-}
 
     public function user($id){
         $user = (User::find($id));

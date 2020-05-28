@@ -1,19 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
+
     @if( Auth::id() === $playlist->utilisateur_id)
-    @if( Route::currentRouteName() == 'playlist')
-        <a href="/ajouterChansonP/{{ $playlist->id }}">Ajouter une chanson à la playlist</a>
+        @if( Route::currentRouteName() == 'playlist')
+            <h2><a href="/ajouterChansonP/{{ $playlist->id }}">Ajouter une chanson à la playlist</a></h2>
+        @endif
     @endif
-    @endif
+    <div class="wrapper2">
 
     @if(count($playlist->chansons )== 0)
-        Votre playlist est vide !
+            <span>Votre playlist est vide !</span>
     @else
-    @foreach($playlist->chansons as $c)
-        <a href="/musique/{{ $c->id }}">{{ $c->nom }}</a><br>
-    @endforeach
-    @endif
 
+            <div class="main-musiques-boite">
+                @foreach($playlist->chansons as $c)
+                    <div class="main-musiques-boite-boite">
+                        <a class="ml5" href="/musique/{{ $c->id }}"><img class="imageMusiques"
+                                                                         src="{{ $c->image }}"/></a>
+                        <span><a href="/musique/{{ $c->id }}">{{ $c->nom }}</a></span><br>
+
+                    </div>
+                @endforeach
+            </div>
+    @endif
+    </div>
 
 @endsection

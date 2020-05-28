@@ -30,6 +30,8 @@ Route::post('/ajouterChanson/', 'MonControlleur@ajouterChanson')->middleware('au
 
 Route::get('/recherche/{s}','MonControlleur@recherche');
 
+Route::get('/deleteMusique/{id}','MonControlleur@deleteMusique')->middleware('auth')->where('id','[0-9]+');
+
 Auth::routes();
 
 
