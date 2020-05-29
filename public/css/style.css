@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+html, body {
+    height: 100%;
+    min-height: 100vh;
+}
+body {
+
+    min-height: 100vh;
+}
+#main{
+    /** div content **/
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 150px);
+    color: black;
+
+}
+/** test **/
+nav {
+    height: 5rem;
+    background: rgba(0,0,0,.6);
+    color: white;
+    position: sticky;
+    top: 0;
+    box-shadow: 0.25rem 0 0.5rem black;
+    font-size: 18px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav .logo {
+    font-weight: 800;
+    font-size: 20px;
+}
+
+nav .btn {
+    display: none;
+}
+
+nav .items {
+    margin-right: auto;
+    margin-left: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: 0s;
+}
+
+nav .items li {
+    padding: 0 0.5rem;
+}
+
+nav .items a:hover {
+    transition: 0.2s;
+}
+
+nav .items a:hover {
+    color: red;
+}
+
+nav .search-icon {
+    width: 240px;
+    display: flex;
+    background: #f2f2f2;
+    border-radius: 5px;
+    color: black;
+}
+nav .search-icon input {
+    width: 200px;
+    border: none;
+    outline: none;
+    display: flex;
+    color: #000;
+    font-size: 16px;
+    border-radius: 5px 0 0 5px;
+    padding-left: 10px;
+}
+nav .search-icon .icon {
+    height: 100%;
+    width: 40px;
+    padding: 0.25rem 0;
+
+    text-align: center;
+    border: 1px solid #cccccc;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+nav ul li.btn span.show:before {
+    content: "\f00d";
+}
+
+@media screen and (max-width: 960px) {
+    nav .logo {
+        display: none;
+    }
+    nav .items {
+        margin: 0 auto 0 0;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    nav .btn {
+        display: inline;
+        margin-right: auto;
+    }
+
+    nav .items {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    nav .items li {
+        padding: 1rem 0;
+        background-color: black;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        z-index: -1;
+    }
+
+    nav .items {
+        transform: translateY(80%);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /* nav .items li a {
+    } */
+    nav .items.show {
+        opacity: 1;
+        transform: translateY(100%);
+        visibility: visible;
+        transition: 0.4s;
+    }
+}
+
+/**     **/
+/** Auth CSS **/
+
+.log{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.card{
+    /** Log In **/
+    background-color: #c0ff79;
+    box-shadow: 1px 1px 6px #555;
+    justify-content: center;
+    padding: 50px;
+}
+.form-group{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.main-box{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url('../images/musique.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+
+}
+.box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    padding: 40px;
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.5);
+    border-radius: 10px;
+}
+.box h2{
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+.box .inputBox{
+    position: relative;
+}
+.box .inputBox input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+.box .inputBox label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 1px;
+    pointer-events: none;
+    transition: .5s;
+}
+.remember{
+    color: #03a9f4;
+    font-size: 16px;
+    margin-bottom: 10%;
+}
+.remember input{
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0;
+    vertical-align: bottom;
+    position: relative;
+    top: -2px;
+    *overflow: hidden;
+}
+.forgot-pass{
+    margin-left: 5%;
+    color:#03a9f4;
+    text-decoration: none;
+}
+.box .inputBox input:focus ~ label,
+.box .inputBox input:valid ~ label{
+    top: -18px;
+    left: 0;
+    color: #03a9f4;
+    font-size: 12px;
+}
+input[type="submit"]{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #03a9f4;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.h2_page_index{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.imageMusique {
+    width: 300px;
+    height: 300px;
+}
+.imageMusiques {
+    width: 200px;
+    height: 200px;
+}
+.main-musiques-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw;
+    align-self: center;
+    justify-content: space-evenly;
+}
+.main-musiques-box-box {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main-musiques-boite {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+
+}
+
+.ml5{
+      margin-left: 5vh;
+  }
+
+.main-musiques-boite-boite {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.input-button{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #03a9f4;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.content-input-button {
+    text-align: center;
+    padding-bottom: 40px;
+}
+/** Profile page **/
+.profil_setting_content{
+    display: flex;
+    margin: 8vh 16vw;
+}
+.profil_part{
+    flex: 3;
+}
+.profil_part h2{
+    text-align: left;
+}
+.follow_part{
+    flex: 1;
+}
+.follow_part h2{
+    text-align: left
+}
+/** **/
+/** Page musique **/
+.musique_page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8%;
+    margin-bottom: 8%;
+}
+/** **/footer{
+           background: rgba(0,0,0,.6);
+           display: flex;
+           flex-direction: row;
+           height: 150px;
+           align-items: center;
+           justify-content: center;
+       }
+
+footer *{
+    color: white;
+    text-decoration: none;
+}
+.footerElements{
+    color: white;
+    text-decoration: none;
+}
+#menu{
+    width:150px;
+    margin:20px auto 0 auto;
+}
+.menu, .sousmenu{
+    text-align:center;
+}
+.menu{
+    height:18px;
+    width:150px;
+    padding:2px 0;
+    background:#404040;
+    color:#fff;
+}
+.sousmenu{
+    height:18px;
+    width:150px;
+    padding:1px 0;
+    background:#808080;
+    color:#fff;
+}
+.menu a{
+    display:block;
+    width:100%;
+    height:100%;
+    color:#fff;
+    font-family:arial,sans-serif;
+    font-size:12px;
+    font-weight:bold;
+    text-decoration:none;
+    background:#404040;
+}
+.sousmenu a{
+    display:block;
+    width:100%;
+    height:100%;
+    color:#fff;
+    font-family:arial,sans-serif;
+    font-size:12px;
+    font-weight:bold;
+    text-decoration:none;
+    background:#808080;
+}
+.menu a:hover, .sousmenu a:hover, .menu a:active, .sousmenu a:active, .menu a:focus, .sousmenu a:focus{
+    background:#ca0008;
+}
+
+.wrapper{
+
+    margin-left: 15vw;
+    margin-right: 15vw;
+    margin-bottom: 5vh;
+
+}.wrapper2{
+
+    margin-left: 30vw;
+     margin-bottom: 5vh;
+
+}
