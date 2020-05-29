@@ -31,22 +31,22 @@
             @auth
                 @if($user->id != \Illuminate\Support\Facades\Auth::id())
                     @if(Auth::user()->jeLesSuit->contains($user->id))
-                        <a href="/suivi/{{ $user->id }}">Arreter de suivre</a>
+                        <a href="/suivi/{{ $user->id }}">Arreter de suivre</a><br>
                     @else
-                        <a href="/suivi/{{ $user->id }}">Suivre</a>
+                        <a href="/suivi/{{ $user->id }}">Suivre</a><br>
                     @endif
                     <br>
                 @endif
             @endauth
-            {{ $nbFollowers }} Abonnés <br>
+            {{ $nbFollowers }} Abonnés <br><br>
 
             @foreach($user->ilsMeSuivent as $followed)
-                <div><a href="/user/{{ $followed->id }}">{{ $followed->name }}</a> vous suit</div><br>
+                <div><a href="/user/{{ $followed->id }}">{{ $followed->name }}</a></div><br>
             @endforeach
 
             {{ $nbAbonnement }} Abonnements<br>
             @foreach($user->jeLesSuit as $follow)
-                <div>Vous êtes abonné à <a href="/user/{{ $follow->id }}">{{ $follow->name }}</a></div><br>
+                <div><a href="/user/{{ $follow->id }}">{{ $follow->name }}</a></div><br>
             @endforeach
         </div>
     </div>
